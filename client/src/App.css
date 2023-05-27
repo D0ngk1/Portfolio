@@ -1,18 +1,26 @@
 *{
-    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 body{
+    overflow: hidden;
     padding: 0;
     margin: 0;
     width: 100vw;
     height: 100vh;
-    background-size: auto;
-    background-image: linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%);
+    /*background-color: bisque;*/
+    background-image: linear-gradient(129.6deg, rgb(0, 0, 0) 50.2%, rgb(16, 37, 60) 100%);
+}
+#root{
+    width: inherit;
+    height: inherit;
 }
 .nav{
-    width: 200px;
+    width: 170px;
     height: inherit;
     position: fixed;
+
 }
 
 .links{
@@ -27,13 +35,95 @@ body{
     list-style: none;
     padding:  0;
     margin:  0;
+    padding-bottom:200px;
     width: inherit;
 }
 .nav li {
-    padding:10px 40px;
+    margin:10px 40px;
+    text-align: center;
 }
-.nav a {
+.nav a,.btn-resume,.flip-btn {
     text-decoration: none;
-    font-size: 45px;
+    font-size: 25px;
+    color: white/*#537FE7*/;
     font-family: 'Bebas Neue', cursive;
+
+}
+.btn-resume,.flip-btn,.btn-flip {
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+}
+nav .active{
+    color: red;
+    padding:0;
+    font-size: 40px;
+    text-align: center;
+    border-bottom: 5px solid rgb(16, 37, 60);
+}
+
+.container h1{
+    color: white;
+    text-align: center;
+}
+.container{
+    width: 80vw;
+    height: inherit;
+   /* border: solid white;*/    
+    margin-left: 200px;
+}
+
+.dl-resume {
+    background-color: rgb(16, 37, 60);
+
+}
+.home{
+    
+    color: white;
+    height: inherit;
+    width: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: transitionIn 1s;
+    transition: all ease-in-out;
+}
+.about {
+    transition: all ease-in-out;
+    animation: transitionIn 1s;
+
+}
+.card-container{
+    width:800px;
+    height: 350px;
+    /*3d content*/
+    perspective: 1200px;
+}
+.btn-container{
+
+    width: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes transitionIn {
+    from  {
+        background: red;
+        opacity: 0;
+        transform: translateY(70%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+@keyframes active {
+to{
+    color: red;
+    padding:0;
+    font-size: 60px;
+    text-align: center;
+    border-bottom: 5px solid rgb(16, 37, 60);
+}
 }
