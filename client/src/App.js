@@ -1,8 +1,7 @@
-import Navbar from "./Navbar";
+//import Navbar from "./MyNavbar";
 import React, {useState} from "react";
 import Home from "./pages/Home";
-import Contact from "./pages/Contact";
-import About from "./pages/About";
+//import About from "./pages/About";
 import "./App.css"
 import {Route, Routes} from "react-router-dom";
 
@@ -29,14 +28,22 @@ function App(){
         setIsFlipped(3)
     }
     return (
-        <>
-            <Navbar onFlip={contact_flip} home_flip={home_flip} flipped={flipped} reset_active_flip={reset_active_flip}/>
-            <div className="container">
-                <Routes>
-                    <Route path="/" element={<Home flipped={flipped} onFlip={handleFlip}/>}/>
-                    <Route path="/About" element={<About />}/>
-                </Routes>
+        <>  
+            <div className="header">
+                <img className="logo" src="/helmGG3.png"/>
+                <h1 className="name">DARYL <span className="">G</span>. <span className="last-name">G</span>UZMAN</h1>
             </div>
+            {//<Navbar onFlip={contact_flip} home_flip={home_flip} flipped={flipped} reset_active_flip={reset_active_flip}/>
+            }
+            <div className="tower-right-no-image"></div>
+            <div className="tower-right"></div>
+            <div className="bottom-container"></div>
+            <Routes>
+                    <Route path="/" element={<Home flipped={flipped} onFlip={handleFlip}/>}/>
+                    {// <Route path="/About" element={<About />}/>
+                    }
+            </Routes>
+            
         </>
     )
 }

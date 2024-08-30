@@ -1,0 +1,18 @@
+.links-container{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 10px;
+    border-radius: 50px;
+}
+.leetcode-icon {
+    fill:  #252627;
+    width: 40px;
+    height: 40px;
+}
+.gmail-icon{
+    font-size: 40px;
+}
+.i-contacts{
+    color: #252627 !important;
+}

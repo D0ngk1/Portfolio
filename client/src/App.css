@@ -1,17 +1,86 @@
-*{
+
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* overflow: hidden;To be removed*/
 }
-body{
+html,body{
     overflow: hidden;
+    width: 100%;
+    height: 100%;
     padding: 0;
     margin: 0;
-    width: 100vw;
-    height: 100vh;
-    /*background-color: bisque;*/
-    background-image: linear-gradient(129.6deg, rgb(0, 0, 0) 50.2%, rgb(16, 37, 60) 100%);
+    box-sizing: border-box; 
+    position: relative;
 }
+body{
+    background-color: #252627;
+    /*background-color: bisque;
+    background-image: linear-gradient(90.6deg, rgb(0, 0, 0) 70.2%, rgb(16, 37, 60) 100% ,#3C2710);
+    #3C2710 100%
+    background: rgb(16,37,60);
+    background: radial-gradient(circle, rgba(16,37,60,1) 0%, rgba(0,0,0,1) 50%);
+    */
+}
+.cursor, .circle{
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    background-color: #FFF9FB;
+    z-index: 1000;
+    top: 0;
+    border-radius: 100%;
+}
+
+.tower-right-no-image{
+    position: absolute;
+    height: 100vh;
+    background-color: #FFF9FB;
+    width: 30vw;
+    z-index: 0;
+    right: 0%;
+}
+.tower-right{
+    position: absolute;
+    height: 100vh;
+    background-color: transparent;
+    width: 30vw;
+    z-index: 1;
+    right: 0%;
+    background-image: url('/public/projects/spartan.png');
+    background-repeat: no-repeat;
+    background-size: 100% ;
+    transform: scaleX(-1);
+    background-position: right bottom;
+}
+.logo{
+    width: 3.5vw;
+}
+.header{
+    display: flex;
+    align-items: center;
+    padding-top: 5vh;
+    padding-left: 3vw;
+    width: 17vw;
+    height: 12vh;
+    position: absolute;
+}
+.red{
+    color: #BB0A21;
+}
+.header h1{
+    width: inherit;
+    text-align: center;
+    font-size: 3vh;
+    color: white;
+    word-spacing: 2px;
+    margin-top: 25px;
+    letter-spacing: 3px;
+    margin-left: -13px;
+    font-family: 'Bebas Neue', cursive;
+}
+
 #root{
     width: inherit;
     height: inherit;
@@ -19,8 +88,24 @@ body{
 .nav{
     width: 170px;
     height: inherit;
-    position: fixed;
-
+    position: absolute;
+}
+.nav ul li{
+    transform: translateX(-100%);
+    opacity: 0;
+    animation: transitionNav 1s ease-out forwards;
+}
+.nav ul li:nth-of-type(1){
+    animation-delay: .4s;
+}
+.nav ul li:nth-of-type(2){
+    animation-delay: .5s;
+}
+.nav ul li:nth-of-type(3){
+    animation-delay: .6s;
+}
+.nav ul li:nth-of-type(4){
+    animation-delay: .7s;
 }
 
 .links{
@@ -67,10 +152,9 @@ nav .active{
     text-align: center;
 }
 .container{
-    width: 80vw;
+    width: 80%;
     height: inherit;
    /* border: solid white;*/    
-    margin-left: 200px;
 }
 
 .dl-resume {
@@ -78,44 +162,75 @@ nav .active{
 
 }
 .home{
-    
     color: white;
-    height: inherit;
-    width: inherit;
+    height: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 2;
+    position: absolute;
+    left: 0%;
+}
+.card-container1{
     animation: transitionIn 1s;
     transition: all ease-in-out;
+    height:  100vh;
+    width:  100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10vh;
+    z-index: 10001;
 }
+
 .about {
     transition: all ease-in-out;
-    animation: transitionIn 1s;
+    height: max-content;
+    width: max-content;
+    .carousel{
+        transition: all ease-in-out;
+        animation: transitionIn 1s;
+    }
 
+    .item-options{
+        opacity: 0;
+        transform: translateX(100%);
+        animation: transitionOps 1s ease-out forwards;
+    }
+    .item-options:nth-of-type(1){
+        animation-delay: .4s;
+    }
+    .item-options:nth-of-type(2){
+        animation-delay: .5s;
+    }
 }
 .card-container{
-    width:800px;
-    height: 350px;
+    width:750px;
+    height: fit-content;
     /*3d content*/
     perspective: 1200px;
-}
-.btn-container{
-
-    width: 700px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 @keyframes transitionIn {
     from  {
-        background: red;
         opacity: 0;
-        transform: translateY(70%);
+        transform: translateY(100%);
     }
     to {
         opacity: 1;
-        transform: translateY(0%);
+        transform: translateY(0%) ;
+    }
+}
+@keyframes transitionOps {
+    from  {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0%);
     }
 }
 @keyframes active {
@@ -126,4 +241,77 @@ to{
     text-align: center;
     border-bottom: 5px solid rgb(16, 37, 60);
 }
+}
+
+@keyframes transitionNav {
+    from  {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+.bottom-container{
+    position: absolute;
+    background-color: transparent;
+    width: 100vw;
+    height: 100vh;
+    bottom:0;
+    background-image: url("/public/projects/uncharted.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: bottom;
+}
+
+
+@media only screen and (max-device-width: 580px){
+    *{
+        overflow: hidden;
+    }
+ 
+    .cards{
+        width: 80vw;
+        height: 70vh;
+    }
+    .btn-container{
+        width: 120px;
+        right: 5px;
+        top: 0;
+    }
+    .btn-flip-front ,.btn-flip-back{
+        height: 30px;
+        font-size: 70%;
+    }
+    .my-links{
+        bottom: 20px;
+        left: 80px;
+        padding: 0;
+    }
+    .links-container{
+        height: 50px;
+        width: 300px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 0;
+    }
+    .i-contacts:not(.leetcode-icon){
+        width: 100%;
+        font-size: 40px;
+    }
+    .header{
+        width: max-content;
+        .logo{
+            width: 70px;
+        }
+        padding: 0;
+        margin-top: 7.5px;
+    }
+    .tower-right{
+        width: 100%;
+    }
+
 }

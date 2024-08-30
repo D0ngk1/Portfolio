@@ -1,3 +1,9 @@
+.landing-page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+}
 .cards,.btn-container {
     /* Content alignment*/
     position: relative;
@@ -8,32 +14,60 @@
     /*3d content*/
     transform-style: preserve-3d;
     transition: all ease-in-out;
-    transition: transform 1000ms;
+    transition: transform 500ms;
 }
 .btn-container{
-    padding-top:50px;
-    
+    overflow: visible;
+    margin-top: 50px;
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    top:2.8vh;
+    right:20vw;
+}
+.content{
+    padding: 15px;
+    position: absolute;
+    width: 100%;
+    bottom: 0%;
+    height: max-content;
+    background-image:linear-gradient(0.6deg, #252627  0.2%, rgba(255, 255, 255, 0)90%);
+}
+.title {
+    font-size: 5vh;
+}
+.title-info{
+    font-size: 4vh;
+}
+.content .description{
+    font-size: 2vh;
 }
 .btn-flip{
     height: 30px;
-    width: 100px;
+    width: max-content;
     text-align: center;
     color: white;
-    font-family: 'Bebas Neue', cursive;
     font-size: 1.5em;
+    font-family: Arial, Helvetica, sans-serif;;
 }
 .cards{
-
-    width:700px;
-    height: 350px;
+    width: 70vw;
+    height: 32vw;
     color: white;
+    overflow: visible;
 }
 .flipped {
     transform: rotateY(-180deg);
 }
+.card-front{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', cursive;
+}
 .card-back,.card-front{
-    width:700px;
-    height: 350px;
+    width:inherit;
+    height: inherit;
 }
 .card-back,.card-front{
     /* alignment */
@@ -45,9 +79,6 @@
     justify-content: center;
     align-items: center;
     transform: rotateX(0deg);
-    border: .5px white;
-
-    
 }
 .btn-flip-front,.btn-flip-back{
     position: absolute;
@@ -58,37 +89,324 @@
     justify-content: center;
     align-items: center;
     transform: rotateX(0deg);
-    border: solid white;
+    border: solid #252627;
+    padding: 5px;
+    background-color: transparent !important;
+}
+.btn-flip{
+    color: #252627;
 }
 
 
 .card-front,.btn-flip-front {
     z-index: 0;
-    background-image:linear-gradient(180.6deg, rgb(0, 0, 0) 50.2%, rgb(16, 37, 60) 100%);
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
 .card-back,.btn-flip-back{
+    
     z-index: -1;
     color: white;
     transform: rotateY(-180deg);
-    /*background-image:linear-gradient(180.6deg, rgb(0, 0, 0) 50.2%, rgb(16, 37, 60) 100%);*/
-    background-color:black;
-    opacity: 0.8;
-    background-image:  linear-gradient(30deg, rgb(16, 37, 60) 12%, transparent 12.5%, transparent 87%, rgb(16, 37, 60) 87.5%, rgb(16, 37, 60)), linear-gradient(150deg, rgb(16, 37, 60)12%, transparent 12.5%, transparent 87%, rgb(16, 37, 60) 87.5%, #000000), linear-gradient(30deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(150deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(60deg, #00000077 25%, transparent 25.5%, transparent 75%, #00000077 75%, #00000077), linear-gradient(60deg, #00000077 25%, transparent 25.5%, transparent 75%, #00000077 75%, #00000077);
-    background-size: 20px 35px;
-    background-position: 0 0, 0 0, 10px 18px, 10px 18px, 0 0, 10px 18px;
+    /*background-image:linear-gradient(70.6deg, rgb(0, 0, 0) 20.2%, rgb(16, 37, 60)  100%);*/
+    background-color: #252627;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
 .card-front h3{
     text-align: center;
     width: inherit;
-    font-family: Arial, Helvetica, sans-serif;
-}
-.card-front h1{
-    width: inherit;
-    text-align: center;
-    font-family: 'Bebas Neue', cursive;
-    font-size: 3em;
+    font-family: Arial, Helvetica, sans-serif !important;
+    color: red !important;
 }
 .contact-details{
-    font-family: 'Bebas Neue', cursive;
-    font-size: 1.5em;
+    font-family:Arial, Helvetica, sans-serif !important;
+    font-size: 1.2em;
+    color: white;
+    padding: 5px;
+    padding: 20px;
+    letter-spacing: 3.5px;
 }
+.contact-details p{
+    margin-bottom: 15px;
+    letter-spacing: 3.5px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.631);
+}
+.title-back{
+    margin-bottom: 30px;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.786);
+}
+.logo-back{
+    width: 250px;
+}
+.about-me{
+    font-size: 3vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #D3D4D9;
+    width: 36vw;
+}
+.logo-front{
+    width: auto;
+    height: auto;
+}
+.intro{
+    font-size: 6vh;
+}
+.name{
+    font-size: 9vh;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 2px;
+    color: #4B88A2;
+    font-weight: bold;
+}
+.job-title{
+    color: #BB0A21;
+    font-size: 5vh;
+}
+.more-info{
+    margin-top: -2.5vh;
+}
+.card-item {
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    background-color: #4B88A2;
+}
+.card-item img{
+    width: inherit;
+    height: inherit;
+    object-fit: fill;
+    /*position: relative;
+    object-position: 40% 50%;*/
+}
+
+
+/* Initial States */
+
+.outro{
+animation: projectsOut .08s ease-in-out;
+}
+.outro2{
+    animation: projectsOut2 .08s ease-in-out;
+}
+
+.second {
+    -webkit-clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+}
+
+.first {
+    -webkit-clip-path: polygon(0% 0%, 0 100%, 0 100%, 100% 0, 100% 0);
+    clip-path: polygon(0% 0%, 0 100%, 0 100%, 100% 0, 100% 0);
+}
+
+/* Hover States    animation: projectsOut .5s ease-in-out;*/
+.second.hovered{
+    animation: projectsIn2 .08s ease-in-out;
+    -webkit-clip-path: polygon(0 19%, 0 100%, 100% 100%, 100% 0, 11% 0);
+    clip-path: polygon(0 19%, 0 100%, 100% 100%, 100% 0, 11% 0);
+
+}
+
+.first.hovered{
+    animation: projectsIn .08s ease-in-out;
+    -webkit-clip-path: polygon(0% 0%, 0 100%, 85% 100%, 100% 78%, 100% 0);
+    clip-path: polygon(0% 0%, 0 100%, 85% 100%, 100% 78%, 100% 0);
+    z-index: 1004;
+}
+
+/* Keyframes */
+@keyframes projectsIn2 {
+    from {
+        z-index: 1002;
+        -webkit-clip-path: polygon(0 100%, 0 100%, 100% 100%, 100% 0, 100% 0);
+        clip-path: polygon(0 100%, 0 100%, 100% 100%, 100% 0, 100% 0);
+    }
+    to {
+        -webkit-clip-path: polygon(0 19%, 0 100%, 100% 100%, 100% 0, 11% 0);
+        clip-path: polygon(0 19%, 0 100%, 100% 100%, 100% 0, 11% 0);
+        z-index: 1003;
+    }
+}
+
+@keyframes projectsOut2 {
+    from  {
+        z-index: 1001;
+        -webkit-clip-path: polygon(0 19%, 0 100%, 100% 100%, 100% 0, 11% 0);
+        clip-path: polygon(0 19%, 0 100%, 100% 100%, 100% 0, 11% 0);
+    }
+    to {
+        -webkit-clip-path: polygon(0 100%, 0 100%, 100% 100%, 100% 0, 100% 0);
+        clip-path: polygon(0 100%, 0 100%, 100% 100%, 100% 0, 100% 0);
+        z-index: 1003;
+    }
+}
+
+@keyframes projectsIn {
+    from {
+        z-index: 1003;
+        -webkit-clip-path: polygon(0% 0%, 0 100%, 0 100%, 100% 0, 100% 0);
+        clip-path: polygon(0% 0%, 0 100%, 0 100%, 100% 0, 100% 0);
+    }
+    to {
+        -webkit-clip-path: polygon(0% 0%, 0 100%, 85% 100%, 100% 78%, 100% 0);
+        clip-path: polygon(0% 0%, 0 100%, 85% 100%, 100% 78%, 100% 0);
+        z-index: 1004;
+    }
+}
+
+@keyframes projectsOut {
+    from {
+        z-index: 1001;
+        -webkit-clip-path: polygon(0% 0%, 0 100%, 85% 100%, 100% 78%, 100% 0);
+        clip-path: polygon(0% 0%, 0 100%, 85% 100%, 100% 78%, 100% 0);
+    }
+    to {
+        -webkit-clip-path: polygon(0% 0%, 0 100%, 0 100%, 100% 0, 100% 0);
+        clip-path: polygon(0% 0%, 0 100%, 0 100%, 100% 0, 100% 0);
+        z-index: 1003;
+    }
+}
+
+.hide{
+    opacity: 0;
+}
+.title, .title-info{
+    color: #ffffff;
+    font-size: 8vh;
+    font-family: 'Bebas Neue', cursive;
+    text-decoration: underline red;
+    width: max-content;
+}
+.title-info{
+    font-size: 7vh;
+    margin-left: 15px;
+    opacity: .8;
+    text-decoration: none;
+}
+.content .description{
+    margin-top: 20px;
+    font-size: 2.5vh;
+    color: #ffffffd6;
+    width: 50%;
+    word-spacing: 2px;
+    letter-spacing: 1px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 15px;
+}
+.main-title-1{
+    font-size: 10.5vh;
+    color:#D3D4D9;
+    z-index: 2005;
+    position: absolute;
+    top: 25%;
+    left: 20%;
+    background-color: #252627;
+    padding: 15px;
+}
+.main-title-2{
+    font-size: 10.5vh;
+    color:#D3D4D9;
+    z-index: 2005;
+    position: absolute;
+    bottom: 25%;
+    right: 20%;
+    background-color: #252627;
+    padding: 15px;
+}
+.my-links{
+    height: auto;
+    width: auto;
+    position: absolute;
+    left:10vw;
+}
+
+.plinks{
+    margin-left: 15px;
+}
+.plinks i{
+    margin-left: 8px;
+}
+
+.title-div{
+
+    display: flex;
+    align-items: center;
+}
+/*.second {
+    -webkit-clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+    animation: projectsOut 1s ease-in-out;
+}
+
+.second:hover{
+    animation: projectsIn 1s ease-in-out;
+    -webkit-clip-path: polygon(0 19%, 0 100%, 100% 100%, 100% 0, 11% 0);
+    clip-path: polygon(0 19%, 0 100%, 100% 100%, 100% 0, 11% 0);
+    
+}
+.first{
+    -webkit-clip-path: polygon(0% 0%, 0 100%, 0 100%, 100% 0, 100% 0);
+    clip-path: polygon(0% 0%, 0 100%, 0 100%, 100% 0, 100% 0);
+    animation: projectsOut2 1s ease-in-out;
+}
+.first:hover{
+    animation: projectsIn2 1s ease-in-out;
+    -webkit-clip-path: polygon(0% 0%, 0 100%, 85% 100%, 100% 78%, 100% 0);
+    clip-path: polygon(0% 0%, 0 100%, 85% 100%, 100% 78%, 100% 0);
+    z-index: 1001;
+    
+}
+
+@keyframes projectsIn2 {
+    from{
+        -webkit-clip-path: polygon(0% 0%, 0 100%, 0 100%, 100% 0, 100% 0);
+        clip-path: polygon(0% 0%, 0 100%, 0 100%, 100% 0, 100% 0);
+        z-index: 1002;
+    }
+    to{
+        -webkit-clip-path: polygon(0% 0%, 0 100%, 85% 100%, 100% 78%, 100% 0);
+        clip-path: polygon(0% 0%, 0 100%, 85% 100%, 100% 78%, 100% 0);
+        z-index: 1002;
+    }
+}
+@keyframes projectsOut2 {
+    0%{
+        -webkit-clip-path:  ppolygon(0% 0%, 0 100%, 85% 100%, 100% 78%, 100% 0);
+        clip-path:  polygon(0% 0%, 0 100%, 85% 100%, 100% 78%, 100% 0);
+        z-index: 1002;
+    }
+    100%{
+        -webkit-clip-path:   polygon(0% 0%, 0 100%, 0 100%, 100% 0, 100% 0);
+        clip-path:   polygon(0% 0%, 0 100%, 0 100%, 100% 0, 100% 0);
+        z-index: 1002;
+    }
+}
+
+@keyframes projectsIn {
+    from{
+        -webkit-clip-path: polygon(0 100%, 0 100%, 100% 100%, 100% 0, 100% 0);
+        clip-path: polygon(0 100%, 0 100%, 100% 100%, 100% 0, 100% 0);
+    }
+    to{
+        -webkit-clip-path: polygon(0 19%, 0 100%, 100% 100%, 100% 0, 11% 0);
+        clip-path: polygon(0 19%, 0 100%, 100% 100%, 100% 0, 11% 0);
+        z-index: 1001;
+    }
+}
+@keyframes projectsOut {
+    0%{
+        -webkit-clip-path: polygon(0 19%, 0 100%, 100% 100%, 100% 0, 11% 0);
+        clip-path: polygon(0 19%, 0 100%, 100% 100%, 100% 0, 11% 0);
+
+    }
+    100%{
+        -webkit-clip-path: polygon(0 100%, 0 100%, 100% 100%, 100% 0, 100% 0);
+        clip-path: polygon(0 100%, 0 100%, 100% 100%, 100% 0, 100% 0);
+        z-index: 1001;
+    }
+}*/
