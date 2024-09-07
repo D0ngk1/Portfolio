@@ -30,7 +30,7 @@ function Cards({flipped}){
         <div className="my-links">
             <Links/>
         </div>
-        <div className={`cards ${flipped==0 ? "flipped" : ""}`}>
+        <div className={`cards ${flipped===0 ? "flipped" : ""}`}>
             <div className="card-front">
                 <div className="logo-front">
                     <p className="about-me"><span className="intro"> Greetings! I’m <span className="name">DARYL</span> .</span></p>
@@ -46,7 +46,7 @@ function Cards({flipped}){
                     </p>
                 </div>*/}
             </div>
-            <div className={`card-back ${flipped==0 ? "back-active" : ""}`}>
+            <div className={`card-back ${flipped===0 ? "back-active" : ""}`}>
                         <div className={`card-item first 
                             ${isFirstHovered ? 'hovered' : ''} `}
                                         onMouseEnter={() => handleMouseEnter(setIsFirstHovered)}
@@ -54,7 +54,7 @@ function Cards({flipped}){
                                         >
                             <div className="background-card-item">
                                 <div className="image-wrapper">
-                                    <img className={`${isFirstHovered ? 'background-card-item-hovered' : 'image-not-hovered'}`} src='/projects/todo-list.jpg' /> 
+                                    <img className={`${isFirstHovered ? 'background-card-item-hovered' : 'image-not-hovered'}`} alt="Notebook, laptop and pen" src='/projects/todo-list.jpg' /> 
                                 </div>
                             </div>
                             <div className={`main-title-1 ${isFirstHovered  ? 'hide' : ''}`}> Todo List </div>
@@ -78,7 +78,7 @@ function Cards({flipped}){
                                         >
                             <div className="background-card-item">
                                 <div className="image-wrapper">
-                                    <img className={`${isSecondHovered ? 'background-card-item-hovered' : 'image-not-hovered'}`} src='/projects/dictionary.jpg'/> 
+                                    <img className={`${isSecondHovered ? 'background-card-item-hovered' : 'image-not-hovered'}`} alt="book" src='/projects/dictionary.jpg'/> 
                                 </div>
                             </div>
                             <div className={`main-title-2 ${isSecondHovered ? 'hide' : ''}`}> Dictionary </div>
