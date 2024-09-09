@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.c0c185a9.css",
-    "main.js": "/Portfolio/static/js/main.b3d34416.js",
+    "main.css": "/Portfolio/static/css/main.88f24a76.css",
+    "main.js": "/Portfolio/static/js/main.bcbdf351.js",
     "static/media/uncharted.png": "/Portfolio/static/media/uncharted.b40d71ec9540bb155de5.png",
     "static/media/spartan.png": "/Portfolio/static/media/spartan.e2c616c9d563811dcb22.png",
     "static/media/Road_Rage.otf": "/Portfolio/static/media/Road_Rage.03e8327bbbb7b1abbae9.otf",
     "static/media/dictionary.jpg": "/Portfolio/static/media/dictionary.fbf9aca66497c6291145.jpg",
     "static/media/todo-list.jpg": "/Portfolio/static/media/todo-list.2a54aeb022a094aa83e6.jpg",
     "index.html": "/Portfolio/index.html",
-    "main.c0c185a9.css.map": "/Portfolio/static/css/main.c0c185a9.css.map",
-    "main.b3d34416.js.map": "/Portfolio/static/js/main.b3d34416.js.map"
+    "main.88f24a76.css.map": "/Portfolio/static/css/main.88f24a76.css.map",
+    "main.bcbdf351.js.map": "/Portfolio/static/js/main.bcbdf351.js.map"
   },
   "entrypoints": [
-    "static/css/main.c0c185a9.css",
-    "static/js/main.b3d34416.js"
+    "static/css/main.88f24a76.css",
+    "static/js/main.bcbdf351.js"
   ]
 }
